@@ -4,10 +4,9 @@
 ## Create the VMs
 - name: Obtain SSO token
   ovirt_auth:
-    state: present
 
-- name: "Creates OCP Virtual Machine {{ ovirt_name }}-{{ ovirt_count }} from template"
-  ovirt_vms:
+- name: "Create VM"
+  ovirt_vm:
     state: running
     name: "{{ ovirt_name }}-{{ ovirt_count }}"
     template: "{{ ovirt_rhv_template }}"
@@ -25,26 +24,5 @@
       nic_gateway: "{{ ovirt_nic_gateway }}"
       nic_name: "{{ ovirt_nic_name }}"
       nic_on_boot: "{{ ovirt_nic_on_boot }}"
-  register: ovirt_vm_created
 
-- name: "Tag {{ ovirt_name }}-{{ ovirt_count }} VM"
-  include_role:
-    name: ovirt-vm-tag
-  vars:
-    ovirt_tag_name: "{{ item }}"
-    ovirt_tag_vm: "{{ ovirt_vm_created.vm.name }}"
-  with_items:
-    - "rhv-ocp"
-    - "{{ ovirt_name }}"
 
-- name: "Add DNS entries for {{ ovirt_name }}-{{ ovirt_count }} VM"
-  include_role:
-    name: freeipa-dns-add
-  vars:
-    ipa_dns_entry: "{{ ovirt_name }}-{{ ovirt_count }}.{{ ovirt_domain_name }}"
-    ipa_server_hostname: "{{ dns_ipa_host }}"
-    ipa_user: "{{ ipa_user }}"
-    ipa_password: "{{ ipa_password }}"
-    ipa_zone_name: "{{ dns_zone_name }}"
-    ipa_nic_ip_address: "{{ ovirt_nic_ip_address }}"
-    ipa_reverse_zone_name: "{{ dns_reverse_zone_name }}"
