@@ -7,6 +7,7 @@ Requires credentials to your RHV instance. You can pass the credentials as varia
 
 # Defaults
 
+```
 ovirt_wait: "True"
 ovirt_cluster: "Default"
 ovirt_name: "rhv-ocp-master"
@@ -23,4 +24,4 @@ openshift_cpu_cores: 2
 openshift_memory: 4096MiB
 ovirt_count: 1
 ovirt_vm_disk_storage_domain: "nas-1tbssd"
-
+```
