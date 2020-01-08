@@ -24,5 +24,5 @@
       nic_gateway: "{{ ovirt_nic_gateway }}"
       nic_name: "{{ ovirt_nic_name }}"
       nic_on_boot: "{{ ovirt_nic_on_boot }}"
-
-
+  async: 120
+  poll: 0
