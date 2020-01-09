@@ -16,3 +16,4 @@ openshift_cpu_cores: 2
 openshift_memory: 4096MiB
 ovirt_count: 1
 ovirt_vm_disk_storage_domain: "nas-1tbssd"
+ovirt_insecure_login: True

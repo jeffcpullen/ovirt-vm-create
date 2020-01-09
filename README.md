@@ -1,27 +1,38 @@
-# Requirements
+Role Name
+=========
 
-Needs python-ovirt-engine-sdk4
+A brief description of the role goes here.
 
-Requires credentials to your RHV instance. You can pass the credentials as variables or as environmental variables.
+Requirements
+------------
 
+Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
 
-# Defaults
+Role Variables
+--------------
 
-```
-ovirt_wait: "True"
-ovirt_cluster: "Default"
-ovirt_name: "rhv-ocp-master"
-ovirt_domain_name: "example.com"
-ovirt_rhv_template: "rhel-server-7.7-template"
-ovirt_dns_search: "example.com"
-ovirt_nic_boot_protocol: "static"
-ovirt_nic_ip_address: "192.168.1.5"
-ovirt_nic_netmask: "255.255.255.0"
-ovirt_nic_gateway: "192.168.1.1"
-ovirt_nic_name: "eth0"
-ovirt_nic_on_boot: "true"
-openshift_cpu_cores: 2
-openshift_memory: 4096MiB
-ovirt_count: 1
-ovirt_vm_disk_storage_domain: "nas-1tbssd"
-```
+A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+
+Dependencies
+------------
+
+A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+
+Example Playbook
+----------------
+
+Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+
+    - hosts: servers
+      roles:
+         - { role: username.rolename, x: 42 }
+
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+An optional section for the role authors to include contact information, or a website (HTML is not allowed).

@@ -4,6 +4,11 @@
 ## Create the VMs
 - name: Obtain SSO token
   ovirt_auth:
+    username: "{{ ovirt_user_name }}"
+    password: "{{ ovirt_user_password }}"
+    state: present
+    insecure: "{{ ovirt_insecure_login }}"
+    url: "{{ ovirt_url_fqdn }}"
 
 - name: "Create {{ ovirt_name }}-{{ ovirt_count }}"
   ovirt_vm:
