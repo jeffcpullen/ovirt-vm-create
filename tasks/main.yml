@@ -1,7 +1,9 @@
 ---
 # tasks file for ovirt-vm-create
 
+
 ## Create the VMs
+# @action ovirt_auth # Obtain an SSO token
 - name: Obtain SSO token
   ovirt_auth:
     username: "{{ ovirt_user_name }}"
@@ -9,6 +11,11 @@
     state: present
     insecure: "{{ ovirt_insecure_login }}"
     url: "{{ ovirt_url_fqdn }}"
+
+# @todo improvement:
+# remove the forced naming of ovirt_name + ovirt_count
+
+# @action ovirt_vm # Create the virtual machine on oVirt/RHV
 
 - name: "Create {{ ovirt_name }}-{{ ovirt_count }}"
   ovirt_vm:

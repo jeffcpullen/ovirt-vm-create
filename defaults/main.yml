@@ -1,5 +1,5 @@
 ---
-# defaults file for ovirt-vm-create
+# defaults file for ovirt-vm-create 
 ovirt_wait: "True"
 ovirt_cluster: "Default"
 ovirt_name: "rhv-ocp-master"

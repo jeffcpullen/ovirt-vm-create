@@ -3,6 +3,10 @@ galaxy_info:
   description: your description
   company: your company (optional)
 
+# @meta author: Jeff Pullen
+# @meta email: jpullen@redhat.com
+# @meta description: This role is designed to create virtual machines on oVirt/RHV using a few variables. Combined with a loop it is simple to build out many disimiliar systems quickly
+
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
   # issue_tracker_url: http://example.com/issue/tracker
