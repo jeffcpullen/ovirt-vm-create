@@ -12,15 +12,14 @@
     insecure: "{{ ovirt_insecure_login }}"
     url: "{{ ovirt_url_fqdn }}"
 
-# @todo improvement:
-# remove the forced naming of ovirt_name + ovirt_count
+
 
 # @action ovirt_vm # Create the virtual machine on oVirt/RHV
 
-- name: "Create {{ ovirt_name }}-{{ ovirt_count }}"
+- name: "Create {{ ovirt_name }}"
   ovirt_vm:
     state: running
-    name: "{{ ovirt_name }}-{{ ovirt_count }}"
+    name: "{{ ovirt_name }}"
     template: "{{ ovirt_rhv_template }}"
     cluster: "{{ ovirt_cluster }}"
     cpu_cores: "{{ openshift_cpu_cores }}"
@@ -28,7 +27,7 @@
     wait: "{{ ovirt_wait }}"
     storage_domain: "{{ ovirt_vm_disk_storage_domain }}"
     cloud_init:
-      host_name: "{{ ovirt_name }}-{{ ovirt_count }}.{{ ovirt_domain_name }}"
+      host_name: "{{ ovirt_name }}.{{ ovirt_domain_name }}"
       dns_search: "{{ ovirt_dns_search }}"
       nic_boot_protocol: "{{ ovirt_nic_boot_protocol }}"
       nic_ip_address: "{{ ovirt_nic_ip_address }}"

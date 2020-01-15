@@ -14,6 +14,5 @@
 # @var ovirt_nic_on_boot: "true" # If the network interface should be started at boot
 # @var openshift_cpu_cores: 2 # The number of CPU cores to assign to the VM
 # @var openshift_memory: 4096MiB # The ammount of RAM to assign to the VM
-# @var ovirt_count: 1 # The number to append to the ovirt_name
 # @var ovirt_vm_disk_storage_domain: "nas-1tbssd" # The storage domain name in ovirt/RHV
 # @var ovirt_insecure_login: True # If certificates are trusted between the ansible host and oVirt/RHV this can be set to false

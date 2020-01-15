@@ -1,6 +1,6 @@
 # Ansible Role: ovirt-vm-create
 
-This role is designed to create virtual machines on ovirt/rhv using a few variables. combined with a loop it is simple to build out many disimiliar systems quickly 
+This role is designed to create virtual machines on ovirt/rhv using a few variables. combined with a loop it is simple to build out many disimiliar systems quickly
 
 ## Actions:
 
@@ -8,9 +8,9 @@ Actions performed by this role
 
 
 #### Ovirt_auth:
-* Obtain an SSO token 
+* Obtain an SSO token
 #### Ovirt_vm:
-* Create the virtual machine on oVirt/RHV 
+* Create the virtual machine on oVirt/RHV
 
 ## Tags:
 ## Variables:
@@ -71,10 +71,6 @@ Actions performed by this role
 
 
 
-* `ovirt_count`: `1` - The number to append to the ovirt_name
-
-
-
 * `ovirt_vm_disk_storage_domain`: `"nas-1tbssd"` - The storage domain name in ovirt/RHV
 
 
@@ -85,10 +81,9 @@ Actions performed by this role
 ## TODO:
 
 #### Improvement:
-* remove the forced naming of ovirt_name + ovirt_count 
+
 
 ## Author Information
 This role:  was created by: Jeff pullen
 Jpullen@redhat.com
 Documentation generated using: [Ansible-autodoc](https://github.com/AndresBott/ansible-autodoc)
-
